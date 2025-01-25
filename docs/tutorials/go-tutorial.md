@@ -3,14 +3,6 @@
 * Primary author: [Maxim Chadaev](https://github.com/maximdolphin)  
 * Reviewer: [Daniel Henderson](https://github.com/HendersonDaniel)
 
-## Expectations for the Go Tutorial
-- The dev container should use a base image from Microsoft (Hint: refer back to the MkDocs tutorial).
-- Ensure the dev container installs the official Go VSCode Plugin (made by the Go Team at Google).
-- Demonstrate the `go version` subcommand to prove a recent version of Go is installed.
-- Utilize the `go mod` subcommand.
-- Use the `go run` subcommand.
-- Use the `go build` subcommand, discuss this in the context of COMP211's `gcc` command, run the built binary directly, and discuss the difference between `run` and `build`.
-
 ## Initial Setup
 In your project:
 
@@ -57,7 +49,7 @@ ENV ENV="/home/$USERNAME/.ashrc" \
     ZSH=/home/$USERNAME/.oh-my-zsh \
     EDITOR=vi \
     LANG=en_US.UTF-8
-RUN printf 'ZSH_THEME="robbyrussell"\nENABLE_CORRECTION="false"\nplugins=(git copyfile extract colorize dotenv encode64 golang)\nsource $ZSH/oh-my-zsh.sh' > "/home/$USERNAME/.zshrc"
+RUN printf 'ZSH_THEME="robbyrussell"\nENABLE_CORRECTION="false"\nplugins=(git copyfile extract colorize dotenv encodexq64 golang)\nsource $ZSH/oh-my-zsh.sh' > "/home/$USERNAME/.zshrc"
 RUN echo "exec `which zsh`" > "/home/$USERNAME/.ashrc"
 USER root
 ```
@@ -100,6 +92,14 @@ This installs a few extensions in your container and bind mounts your .ssh direc
 Side note: VS Code is clever enough to ignore comments in devcontainer.json.
 
 It also runs go mod download after the container is set up to download your Go dependencies when the container is ready.
+
+## Using Go Commands
+1. Verify the Go Installation ```go version```
+2. Initialize a Go module ```go mod init example.com/myapp```
+3. Run your Go code ```go run main.go```
+4. Build a binary ```go build -o myapp main.go```
+5. Generate a binary named "myapp" ```./myapp```
+Unlike go run, go build creates a reusable binary that can be shared or executed multiple times without recompilation.
 
 ### Launching it
 
