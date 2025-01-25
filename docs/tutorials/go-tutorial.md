@@ -108,3 +108,6 @@ Launch it by opening the VS Code command palette and selecting ```Remote-Contain
 This will build the Docker image, install the VS Code dependencies in there, and bind mount everything for you!
 
 Finally, you have a terminal running a beautiful zsh inside VS Code (open a terminal if you don’t see it).
+
+# References
+[Citation 1 -> Medium Article](https://medium.com/@quentin.mcgaw/ultimate-go-dev-container-for-visual-studio-code-448f5e031911)
