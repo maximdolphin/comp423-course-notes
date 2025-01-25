@@ -21,9 +21,8 @@ git commit -m "Initial commit with README"```
 ## Set up Devcontainer
 
 1. Create a directory `.devcontainer`.
-2. Create a Dockerfile `.devcontainer/Dockerfile`.
-3. Create a dev container configuration `.devcontainer/devcontainer.json`.
-4. Make sure you have Docker installed. If you use Windows, make sure your project is on a partition shared with Docker.
+2. Create a dev container configuration `.devcontainer/devcontainer.json`.
+3. Make sure you have Docker installed. If you use Windows, make sure your project is on a partition shared with Docker.
 
 ### Dev Container configuration
 
@@ -31,7 +30,6 @@ git commit -m "Initial commit with README"```
 {
     "name": "Your project Dev",
     "image": "mcr.microsoft.com/devcontainers/go:latest",
-    "dockerFile": "Dockerfile",
     "extensions": [
         "golang.go",
     ],
@@ -47,11 +45,20 @@ It also runs go mod download after the container is set up to download your Go d
 ## Using Go Commands
 
 1. Verify the Go Installation ```go version```
-2. Initialize a Go module ```go mod init example.com/myapp```
-3. Run your Go code ```go run main.go```
-4. Build a binary ```go build -o myapp main.go```
-5. Generate a binary named "myapp" ```./myapp```
-Unlike go run, go build creates a reusable binary that can be shared or executed multiple times without recompilation.
+2. Initialize a Go module ```go mod init my_project_name```
+3. Make a main.go file in your folder and paste this code:
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello COMP423!")
+}
+```
+
+4. Run your Go code ```go run main.go``` or build a binary ```go build -o myapp main.go```
+Unlike go run, go build generates a reusable binary that can be executed multiple times or shared with others without needing recompilation, similar to how gcc compiles source code into an executable binary.
 
 ### Launching it
 
