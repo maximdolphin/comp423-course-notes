@@ -14,7 +14,7 @@ git commit -m "Initial commit with README"```
 
 4. Then, to create a Remote Repository on Github, login to Github and go to the 'Create a New Repository Page`
 5. Choose your settings and details, and choose the same name as your project and create the repository
-6. Then, add the Github repository as a remote with ```git remote add origin https://github.com/<your-username>/<project-name>```
+6. Then, add the Github repository as a remote with ```git remote add origin https://github.com/<your-username>/<project-name>```. Make sure you replace `<your-username>` and `<project-name>` with your GitHub username and project name respectively.
 7. Check the default branch with ```git branch``` and if it is not main, rename it with ```git branch -M main```.
 8. Then push it with ```git push --set-upstream origin main```
 
@@ -61,5 +61,16 @@ This will build the Docker image, install the VS Code dependencies in there, and
 
 Finally, you have a terminal running a beautiful zsh inside VS Code (open a terminal if you don’t see it).
 
+### Pushing to GitHub
+Now you can commit and push these changes to github. Stage your changes and commit them, with an appropriate message, before pushing to your remote repository.
+```
+git add .
+git commit -m "Created Go project"
+git push origin main
+```
+Now, you are done!
+
 # References
 [Citation 1 -> Medium Article](https://medium.com/@quentin.mcgaw/ultimate-go-dev-container-for-visual-studio-code-448f5e031911)
+[Citation 2 -> Kris Jordan's MkDocs Tutorial](https://comp423-25s.github.io/resources/MkDocs/tutorial/)
+[Citation 3 -> Daniel Henderson's Rust Tutorial](https://hendersondaniel.github.io/comp423-course-notes/tutorials/rust-setup/)
